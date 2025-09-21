@@ -1,0 +1,39 @@
+<nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#"><i class="fas fa-cogs"></i> Admin Panel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar"
+      aria-controls="adminNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="adminNavbar">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="#" onclick="showPage('adminDashboard')">
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showPage('manageUsers')">
+            <i class="fas fa-users"></i> Manage Users
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showPage('manageContent')">
+            <i class="fas fa-database"></i> Manage Content
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-danger" href="#" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>

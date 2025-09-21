@@ -1,0 +1,365 @@
+<section>
+  <!-- Main Content -->
+  <div class="container mt-5 pt-5">
+    <!-- Dashboard Page (Homepage) -->
+    <div id="dashboard">
+      <div class="hero-section fade-in">
+        <h1>Welcome, <span id="userName">User</span>! <i class="fas fa-smile"></i></h1>
+        <p class="lead">Discover your perfect career path with our <span class="highlight-text">AI-driven
+            insights</span>.</p>
+        <button class="btn btn-primary cta-button mt-4 pulse" onclick="showPage('questionnaire')">Start Career Test Now
+          <i class="fas fa-arrow-right"></i></button>
+      </div>
+
+      <!-- Menu Options -->
+      <div class="section-title">Your Career Dashboard</div>
+      <div class="section-subtitle">Explore personalized tools to shape your future.</div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="menu-card fade-in" onclick="showPage('questionnaire')">
+            <i class="fas fa-clipboard-list menu-icon"></i>
+            <h5>Take Career Test</h5>
+            <p>Answer questions about your interests and skills to get tailored recommendations.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="menu-card fade-in" onclick="showPage('suggestions')">
+            <i class="fas fa-lightbulb menu-icon"></i>
+            <h5>View Suggestions</h5>
+            <p>Explore AI-generated career paths based on your profile.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="menu-card fade-in" onclick="showPage('goals')">
+            <i class="fas fa-bullseye menu-icon"></i>
+            <h5>Set Goals</h5>
+            <p>Create a roadmap to achieve your career aspirations.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="menu-card fade-in" onclick="showPage('reports')">
+            <i class="fas fa-chart-bar menu-icon"></i>
+            <h5>Reports</h5>
+            <p>Download your personalized career insights and analysis.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="menu-card fade-in" onclick="showPage('resources')">
+            <i class="fas fa-book menu-icon"></i>
+            <h5>Resources & Courses</h5>
+            <p>Access top learning platforms to build your skills.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="feature-section fade-in">
+        <div class="section-title">Why Choose AI-CareerGuide?</div>
+        <div class="section-subtitle">Our platform empowers you with data-driven career insights.</div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <i class="fas fa-brain feature-icon"></i>
+              <h5>AI-Powered Insights</h5>
+              <p>Advanced algorithms analyze your skills, interests, and personality to suggest the best career paths.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <i class="fas fa-graduation-cap feature-icon"></i>
+              <h5>Personalized Recommendations</h5>
+              <p>Get tailored course, college, and career suggestions based on your unique profile.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <i class="fas fa-chart-line feature-icon"></i>
+              <h5>Job Trend Analysis</h5>
+              <p>Stay ahead with insights into job market trends and growth opportunities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Overview (Mock) -->
+      <div class="progress-container fade-in">
+        <div class="section-title">Your Progress</div>
+        <div class="section-subtitle">Track your journey towards your dream career.</div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="font-semibold mb-3">Career Test Completion</h5>
+            <div class="progress">
+              <div id="testProgress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <h5 class="font-semibold mt-4 mb-3">Goals Set</h5>
+            <div class="progress">
+              <div id="goalsProgress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Questionnaire Page (Placeholder) -->
+    <div id="questionnaire" class="hidden">
+      <div class="section-title">Career Questionnaire</div>
+      <div class="section-subtitle">Tell us about yourself to get personalized recommendations.</div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card fade-in">
+            <div class="card-header bg-gradient-primary text-white text-center">
+              <h3><i class="fas fa-question-circle"></i> Career Assessment</h3>
+            </div>
+            <div class="card-body">
+              <form id="questionnaireForm">
+                <h5 class="mb-4 font-semibold">Academic Background</h5>
+                <div class="mb-4">
+                  <label for="grade" class="form-label">Average Grade (%)</label>
+                  <input type="number" class="form-control rounded-lg" id="grade" min="0" max="100"
+                    placeholder="e.g., 85" required>
+                </div>
+                <div class="mb-4">
+                  <label for="subjects" class="form-label">Preferred Subjects</label>
+                  <select class="form-select rounded-lg" id="subjects" multiple required>
+                    <option value="math">Mathematics</option>
+                    <option value="science">Science</option>
+                    <option value="arts">Arts</option>
+                    <option value="commerce">Commerce</option>
+                    <option value="languages">Languages</option>
+                    <option value="computer_science">Computer Science</option>
+                    <option value="history">History</option>
+                    <option value="geography">Geography</option>
+                    <option value="physics">Physics</option>
+                    <option value="chemistry">Chemistry</option>
+                  </select>
+                </div>
+                <div class="mb-4">
+                  <label for="achievements" class="form-label">Achievements</label>
+                  <textarea class="form-control rounded-lg" id="achievements" rows="4"
+                    placeholder="List awards, projects, or achievements"></textarea>
+                </div>
+                <h5 class="mb-4 font-semibold">Skills & Hobbies</h5>
+                <div class="mb-4">
+                  <label class="form-label">Select Your Skills</label><br>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="coding" value="coding">
+                    <label class="form-check-label" for="coding">Coding</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="writing" value="writing">
+                    <label class="form-check-label" for="writing">Writing</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="drawing" value="drawing">
+                    <label class="form-check-label" for="drawing">Drawing</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="sports" value="sports">
+                    <label class="form-check-label" for="sports">Sports</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="leadership" value="leadership">
+                    <label class="form-check-label" for="leadership">Leadership</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="public_speaking" value="public_speaking">
+                    <label class="form-check-label" for="public_speaking">Public Speaking</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="teamwork" value="teamwork">
+                    <label class="form-check-label" for="teamwork">Teamwork</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="problem_solving" value="problem_solving">
+                    <label class="form-check-label" for="problem_solving">Problem Solving</label>
+                  </div>
+                </div>
+                <h5 class="mb-4 font-semibold">Personality Traits</h5>
+                <div class="mb-4">
+                  <label class="form-label">Are you more?</label><br>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="introvert" name="personality" value="introvert"
+                      required>
+                    <label class="form-check-label" for="introvert">Introvert</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="extrovert" name="personality" value="extrovert">
+                    <label class="form-check-label" for="extrovert">Extrovert</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="ambivert" name="personality" value="ambivert">
+                    <label class="form-check-label" for="ambivert">Ambivert</label>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label">Thinking Style</label><br>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="creative" name="style" value="creative" required>
+                    <label class="form-check-label" for="creative">Creative</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="logical" name="style" value="logical">
+                    <label class="form-check-label" for="logical">Logical</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="balanced" name="style" value="balanced">
+                    <label class="form-check-label" for="balanced">Balanced</label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit & Get Recommendations <i
+                    class="fas fa-arrow-right"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Suggestions Page (Placeholder) -->
+    <div id="suggestions" class="hidden">
+      <div class="section-title">Your Career Suggestions</div>
+      <div class="section-subtitle">Explore AI-recommended career paths tailored to your profile.</div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card fade-in">
+            <div class="card-header bg-gradient-primary text-white text-center">
+              <h3><i class="fas fa-trophy"></i> Top Career Recommendations</h3>
+            </div>
+            <div class="card-body">
+              <div id="suggestionsList" class="row g-4">
+                <!-- Suggestions populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Goals Page (Placeholder) -->
+    <div id="goals" class="hidden">
+      <div class="section-title">Set Your Career Goals</div>
+      <div class="section-subtitle">Plan your path to success with a personalized roadmap.</div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card fade-in">
+            <div class="card-header bg-gradient-primary text-white text-center">
+              <h3><i class="fas fa-map"></i> Career Roadmap</h3>
+            </div>
+            <div class="card-body">
+              <form id="goalsForm">
+                <div class="mb-4">
+                  <label for="goalCareer" class="form-label">Target Career</label>
+                  <input type="text" class="form-control rounded-lg" id="goalCareer"
+                    placeholder="e.g., Software Engineer" required>
+                </div>
+                <div class="mb-4">
+                  <label for="timeline" class="form-label">Timeline (Years)</label>
+                  <input type="number" class="form-control rounded-lg" id="timeline" min="1" max="10"
+                    placeholder="e.g., 5" required>
+                </div>
+                <div class="mb-4">
+                  <label for="goalDetails" class="form-label">Additional Details</label>
+                  <textarea class="form-control rounded-lg" id="goalDetails" rows="4"
+                    placeholder="Describe your career aspirations"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Generate Roadmap <i
+                    class="fas fa-chart-line"></i></button>
+              </form>
+              <div id="roadmap" class="mt-5 hidden">
+                <h5 class="font-semibold">Your Personalized Roadmap</h5>
+                <ul id="roadmapList" class="list-group list-group-flush">
+                  <!-- Roadmap steps populated dynamically -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reports Page (Placeholder) -->
+    <div id="reports" class="hidden">
+      <div class="section-title">Personal Career Report</div>
+      <div class="section-subtitle">Download MAGNET Download a detailed summary of your career profile.</div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card fade-in">
+            <div class="card-header bg-gradient-primary text-white text-center">
+              <h3><i class="fas fa-file-pdf"></i> Your Career Report</h3>
+            </div>
+            <div class="card-body text-center">
+              <p class="mb-4">View and download your personalized career insights and recommendations.</p>
+              <button onclick="downloadReport()" class="btn btn-primary">Download PDF <i
+                  class="fas fa-download"></i></button>
+              <div id="reportPreview" class="mt-4 hidden">
+                <div class="alert alert-info rounded-lg">
+                  <h6 class="font-semibold">Report Preview</h6>
+                  <p id="reportContent" class="text-left"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resources Page (Placeholder) -->
+    <div id="resources" class="hidden">
+      <div class="section-title">Learning Resources & Courses</div>
+      <div class="section-subtitle">Explore top platforms to enhance your skills.</div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="card fade-in bg-gradient-primary text-white text-center">
+            <i class="fas fa-laptop-code fa-3x mb-3"></i>
+            <h6 class="font-semibold">Coursera</h6>
+            <p>Access AI, Data Science, and Business courses.</p>
+            <a href="https://coursera.org" target="_blank" class="btn btn-light btn-sm">Explore Now</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card fade-in bg-gradient-primary text-white text-center">
+            <i class="fas fa-video fa-3x mb-3"></i>
+            <h6 class="font-semibold">Udemy</h6>
+            <p>Learn design, coding, and creative skills.</p>
+            <a href="https://udemy.com" target="_blank" class="btn btn-light btn-sm">Explore Now</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card fade-in bg-gradient-primary text-white text-center">
+            <i class="fas fa-users fa-3x mb-3"></i>
+            <h6 class="font-semibold">LinkedIn Learning</h6>
+            <p>Professional development and leadership courses.</p>
+            <a href="https://linkedin.com/learning" target="_blank" class="btn btn-light btn-sm">Explore Now</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card fade-in bg-gradient-primary text-white text-center">
+            <i class="fas fa-code fa-3x mb-3"></i>
+            <h6 class="font-semibold">freeCodeCamp</h6>
+            <p>Free coding tutorials and projects.</p>
+            <a href="https://freecodecamp.org" target="_blank" class="btn btn-light btn-sm">Explore Now</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card fade-in bg-gradient-primary text-white text-center">
+            <i class="fas fa-graduation-cap fa-3x mb-3"></i>
+            <h6 class="font-semibold">edX</h6>
+            <p>University-level courses in various fields.</p>
+            <a href="https://edx.org" target="_blank" class="btn btn-light btn-sm">Explore Now</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card fade-in bg-gradient-primary text-white text-center">
+            <i class="fas fa-book-open fa-3x mb-3"></i>
+            <h6 class="font-semibold">Khan Academy</h6>
+            <p>Free resources for academic subjects.</p>
+            <a href="https://khanacademy.org" target="_blank" class="btn btn-light btn-sm">Explore Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,170 @@
+<section>
+  <div class="container mt-5 pt-5">
+    <!-- Dashboard Page -->
+    <div id="dashboard">
+      <div class="hero-section fade-in">
+        <h1>Welcome, Admin! <i class="fas fa-user-shield"></i></h1>
+        <p class="lead">Manage users, content, and monitor platform analytics.</p>
+      </div>
+      <div class="section-title">Admin Dashboard</div>
+      <div class="section-subtitle">Quick access to key administrative tools.</div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="card fade-in text-center" onclick="showPage('users')">
+            <div class="card-body">
+              <i class="fas fa-users fa-3x mb-3 text-indigo-500"></i>
+              <h5 class="font-semibold">Manage Users</h5>
+              <p>View and manage user profiles.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card fade-in text-center" onclick="showPage('content')">
+            <div class="card-body">
+              <i class="fas fa-database fa-3x mb-3 text-purple-500"></i>
+              <h5 class="font-semibold">Manage Content</h5>
+              <p>Edit career suggestions and resources.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Manage Users Page -->
+    <div id="users" class="hidden">
+      <div class="section-title">Manage Users</div>
+      <div class="section-subtitle">View and manage all user profiles.</div>
+      <div class="card fade-in">
+        <div class="card-header bg-gradient-primary text-white text-center">
+          <h3><i class="fas fa-users"></i> User List</h3>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>Name</th>
+                  <th>Questionnaire</th>
+                  <th>Suggestions</th>
+                  <th>Goals</th>
+                  <th>Bookmarks</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="userTableBody">
+                <!-- Users populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Manage Content Page -->
+    <div id="content" class="hidden">
+      <div class="section-title">Manage Content</div>
+      <div class="section-subtitle">Edit career suggestions and resources.</div>
+      <div class="card fade-in">
+        <div class="card-header bg-gradient-primary text-white text-center">
+          <h3><i class="fas fa-database"></i> Content Management</h3>
+        </div>
+        <div class="card-body">
+          <h5 class="font-semibold mb-3">Add New Career Suggestion</h5>
+          <form id="addSuggestionForm">
+            <div class="mb-3">
+              <label for="careerName" class="form-label">Career Name</label>
+              <input type="text" class="form-control rounded-lg" id="careerName" required>
+            </div>
+            <div class="mb-3">
+              <label for="careerDesc" class="form-label">Description</label>
+              <textarea class="form-control rounded-lg" id="careerDesc" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="careerSalary" class="form-label">Salary Range</label>
+              <input type="text" class="form-control rounded-lg" id="careerSalary" required>
+            </div>
+            <div class="mb-3">
+              <label for="careerSkills" class="form-label">Key Skills</label>
+              <input type="text" class="form-control rounded-lg" id="careerSkills" required>
+            </div>
+            <div class="mb-3">
+              <label for="careerCourses" class="form-label">Recommended Courses</label>
+              <input type="text" class="form-control rounded-lg" id="careerCourses" required>
+            </div>
+            <div class="mb-3">
+              <label for="careerColleges" class="form-label">Top Colleges</label>
+              <input type="text" class="form-control rounded-lg" id="careerColleges" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Suggestion</button>
+          </form>
+          <h5 class="font-semibold mt-4 mb-3">Manage Resources</h5>
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Platform</th>
+                  <th>Description</th>
+                  <th>Link</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="resourceTableBody">
+                <tr>
+                  <td>Coursera</td>
+                  <td>AI, Data Science, Business courses</td>
+                  <td>https://coursera.org</td>
+                  <td><button class="btn btn-danger btn-sm" onclick="deleteResource(this)">Delete</button></td>
+                </tr>
+                <!-- Additional resources can be added dynamically -->
+              </tbody>
+            </table>
+          </div>
+          <button class="btn btn-primary mt-3" onclick="addResourceForm()">Add New Resource</button>
+        </div>
+      </div>
+    </div>
+    <!-- Analytics Page -->
+    <div id="analytics" class="hidden">
+      <div class="section-title">Platform Analytics</div>
+      <div class="section-subtitle">Insights into user activity and platform performance.</div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card fade-in">
+            <div class="card-header bg-gradient-primary text-white">
+              <h5>User Activity</h5>
+            </div>
+            <div class="card-body">
+              <p><strong>Total Users:</strong> <span id="totalUsers">0</span></p>
+              <p><strong>Active Users (Last 30 Days):</strong> <span id="activeUsers">0</span></p>
+              <p><strong>Completed Questionnaires:</strong> <span id="completedQuestionnaires">0</span></p>
+              <p><strong>Average Completion Time:</strong> <span id="avgCompletionTime">N/A</span> mins</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card fade-in">
+            <div class="card-header bg-gradient-primary text-white">
+              <h5>Career Trends</h5>
+            </div>
+            <div class="card-body">
+              <p><strong>Most Popular Career:</strong> <span id="topCareer">N/A</span></p>
+              <p><strong>Average Salary Range:</strong> <span id="avgSalary">N/A</span></p>
+              <p><strong>Top Skill Demand:</strong> <span id="topSkill">N/A</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card fade-in">
+            <div class="card-header bg-gradient-primary text-white">
+              <h5>Usage Trends (Last 30 Days)</h5>
+            </div>
+            <div class="card-body">
+              <p><strong>New Users:</strong> <span id="newUsers">0</span></p>
+              <p><strong>Goal Completions:</strong> <span id="goalCompletions">0</span></p>
+              <p><strong>Resource Views:</strong> <span id="resourceViews">0</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
