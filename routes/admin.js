@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('admin/admin-home',{admin:true})
 });
 
-router.get('/users',(req,res,next)=>{
+router.get('/manage-users',(req,res,next)=>{
   res.render('admin/admin-user-manage',{admin:true})
 })
 

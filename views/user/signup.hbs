@@ -1,0 +1,46 @@
+<section class="d-flex align-items-center justify-content-center login-body">
+  <div class="col-md-6 col-lg-5">
+    <div class="card bg-dark text-white border-0">
+      <div class="card-header bg-secondary text-white text-center">
+        <h3 class="mb-0"><i class="fas fa-user-plus"></i> Create Account</h3>
+      </div>
+      <div class="card-body p-5">
+        <form action="/signup" method="post" novalidate id="userSignupForm">
+          <div class="mb-4">
+            <label for="inputName" class="form-label">Full Name</label>
+            <input type="text" class="form-control bg-dark text-white" id="inputName" name="Name" required minlength="3"
+              placeholder="Enter your full name">
+            <div class="invalid-feedback">Please enter your full name (min 3 characters).</div>
+          </div>
+          <div class="mb-4">
+            <label for="InputEmail1" class="form-label">Email Address</label>
+            <input type="email" class="form-control bg-dark text-white" id="InputEmail1" name="Email" required
+              placeholder="Enter your email">
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+          <div class="mb-4">
+            <label for="InputMobile" class="form-label">Mobile Number</label>
+            <input type="tel" class="form-control bg-dark text-white" id="InputMobile" name="Mobile" pattern="\d{10}"
+              required placeholder="10-digit number">
+            <div class="invalid-feedback">Please enter a valid 10-digit mobile number.</div>
+          </div>
+          <div class="mb-4">
+            <label for="InputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control bg-dark text-white" id="InputPassword1" name="Password" required
+              minlength="6" placeholder="At least 6 characters">
+          </div>
+          <p class="text-center text-danger small form-error"></p>
+          <div class="d-grid mt-5">
+            <button type="submit" class="btn btn-primary">
+              Sign Up <i class="fas fa-arrow-right ms-2"></i>
+            </button>
+          </div>
+          <!-- Login redirect -->
+          <div class="text-center mt-4">
+            <a href="/login" class="text-info text-decoration-none">Already have an account?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

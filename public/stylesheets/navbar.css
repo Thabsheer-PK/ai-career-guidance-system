@@ -1,0 +1,42 @@
+ /* Navbar Styles */
+ .navbar {
+   background: rgba(17, 24, 39, 0.95);
+   backdrop-filter: blur(12px);
+   padding: 1.2rem 2rem;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+   position: fixed;
+   height: 94px; 
+ }
+
+ .navbar-brand {
+   font-size: 1.9rem;
+   font-weight: 700;
+   color: #ffffff !important;
+   display: flex;
+   align-items: center;
+   gap: 0.6rem;
+   transition: color 0.3s ease;
+ }
+
+ .navbar-brand:hover {
+   color: #facc15 !important;
+ }
+
+ .nav-link {
+   color: #d1d5db !important;
+   font-weight: 500;
+   padding: 0.6rem 1.2rem;
+   transition: all 0.3s ease;
+   border-radius: 8px;
+ }
+
+ .nav-link:hover {
+   color: #facc15 !important;
+   background: rgba(255, 255, 255, 0.1);
+   transform: translateY(-2px);
+ }
+
+ .navbar-toggler {
+   border: none;
+   color: #ffffff;
+ }

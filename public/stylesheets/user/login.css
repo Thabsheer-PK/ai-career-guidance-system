@@ -1,0 +1,71 @@
+.login-body {
+  background: linear-gradient(135deg, #0f0f1a, #1a1f2c);
+  color: #d1d5db;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 2rem;
+  position: relative;
+}
+
+.card {
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  background: rgba(20, 25, 38, 0.9);
+  border: 1px solid rgba(88, 101, 242, 0.2);
+}
+
+.card-header {
+  border-radius: 20px 20px 0 0;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #2a2f4a, #3a4060);
+}
+
+.card-header h3 {
+  text-shadow: 0 0 10px rgba(88, 101, 242, 0.5);
+  margin: 0;
+}
+
+.form-label {
+  color: #a3bffa;
+}
+
+#InputEmail1 {
+  border: 1px solid rgba(88, 101, 242, 0.3);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  background: rgba(30, 35, 48, 0.8);
+}
+
+#InputMobile {
+  border: 2px dashed rgba(88, 101, 242, 0.4);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  background: rgba(25, 30, 43, 0.8);
+}
+
+#InputPassword1 {
+  border: 1px solid rgba(88, 101, 242, 0.3);
+  border-radius: 10px 0 0 10px;
+  padding: 0.75rem 1rem;
+  background: rgba(30, 35, 48, 0.8);
+}
+
+.input-group-text {
+  border: 1px solid rgba(88, 101, 242, 0.3);
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  background: rgba(25, 30, 43, 0.8);
+}
+
+button[type="submit"] {
+  border-radius: 30px;
+  padding: 0.85rem 2.5rem;
+  background: linear-gradient(135deg, #4b5bd7, #7c3aed);
+}
+
+a.text-info {
+  color: #93c5fd;
+}
