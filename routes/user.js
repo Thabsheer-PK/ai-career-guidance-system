@@ -11,4 +11,7 @@ router.get('/login', (req, res, next) => {
 router.get('/signup', (req, res, next) => {
   res.render('user/signup', { cssFile: 'user/signup.css', showHeader: false })
 })
+router.get('/profile',(req,res,next)=>{
+  res.render('user/profile')
+})
 module.exports = router;
