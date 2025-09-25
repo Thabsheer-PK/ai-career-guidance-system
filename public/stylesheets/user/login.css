@@ -2,6 +2,7 @@
   background: linear-gradient(135deg, #0f0f1a, #1a1f2c);
   color: #d1d5db;
   overflow-x: hidden;
+  height: 100%;
 }
 
 section {

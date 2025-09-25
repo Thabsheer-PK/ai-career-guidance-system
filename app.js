@@ -4,11 +4,28 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const { engine } = require('express-handlebars')
+const mongoose = require('mongoose')
+const { connectDB } = require('./config/connection')
+let MongoStore = require('connect-mongo')
+const session = require('express-session');
 
 var userRouter = require('./routes/user');
 var adminRouter = require('./routes/admin');
 
+
 var app = express();
+
+connectDB();
+app.use(session({
+  secret: 'Key',
+  resave: false,
+  store: MongoStore.create({
+    client: mongoose.connection.getClient(), // <-- use the same Mongoose connection
+    collectionName: 'sessions'
+  }),
+  cookie: { maxAge: 24 * 60 * 60 * 1000 }
+
+}))
 
 app.engine('hbs', engine({
   extname: 'hbs',
@@ -34,8 +51,6 @@ app.use('/admin', adminRouter);
 app.use(function (req, res, next) {
   next(createError(404));
 });
-
-
 
 // error handler
 app.use(function (err, req, res, next) {
