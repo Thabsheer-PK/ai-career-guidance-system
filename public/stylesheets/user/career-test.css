@@ -1,0 +1,111 @@
+.containerTest {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  padding: 20 15px;
+}
+
+.test-quote {
+  background-color: rgb(53, 36, 69);
+  color: white;
+  padding: 9px 12px;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 20px;
+}
+
+.test-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  color: #1e40af;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  font-size: 1.75rem;
+}
+
+.form-label {
+  color: #000000;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.form-control,
+.form-select,
+textarea {
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 0.6rem 0.8rem;
+  color: #333333;
+  font-size: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: none;
+}
+
+.form-check-input {
+  background-color: #b3b3b32c;
+}
+
+.form-check-input:checked {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.btn-submit {
+  background: #3b82f6;
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.5rem;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-submit:hover {
+  background: #2563eb;
+}
+
+.answer-section {
+  margin-top: 1.5rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1.2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.answer-section h4 {
+  color: #1e40af;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.answer-section p {
+  color: #333333;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .test-card {
+    padding: 1.5rem;
+  }
+
+  .btn-submit {
+    padding: 0.6rem 1.2rem;
+  }
+}

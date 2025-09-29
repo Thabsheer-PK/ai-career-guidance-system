@@ -1,0 +1,110 @@
+<div class="containerTest mt-5">
+  <div class="test-card">
+    <h2 class="section-title text-center">Career Test</h2>
+    <p class="test-quote text-center mb-3">Respond to the following questions to get custom career recommendations.</p>
+    <form action="/career-test/submit" method="post" id="careerTestForm" novalidate>
+      <div class="mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="name" name="name" required minlength="3"
+          placeholder="Enter your name">
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="number" class="form-control" id="age" name="age" min="13" max="100" required
+          placeholder="e.g., 18">
+      </div>
+      <div class="mb-3">
+        <label for="educationLevel" class="form-label">Highest Education Level</label>
+        <select class="form-select" id="educationLevel" name="educationLevel" required>
+          <option value="" disabled selected>Select level</option>
+          <option value="high_school">High School</option>
+          <option value="diploma">Diploma</option>
+          <option value="undergraduate">Undergraduate</option>
+          <option value="postgraduate">Postgraduate</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="grade" class="form-label">Average Grade (%)</label>
+        <input type="number" class="form-control" id="grade" name="grade" min="0" max="100" required
+          placeholder="e.g., 85">
+      </div>
+      <div class="mb-3">
+        <label for="subjects" class="form-label">Favorite Subjects</label>
+        <input type="text" class="form-control" id="strongSubjects" name="subjects" required
+          placeholder="e.g., Math, Science">
+      </div>
+      <div class="mb-3">
+        <label for="workExperience" class="form-label">Boring Subjects</label>
+        <input type="text" class="form-control" id="weackSubjects" name="weackSubjects" placeholder="e.g., Biology, Physics">
+      </div>
+      <div class="mb-3">
+        <label for="interests" class="form-label">Interests/Hobbies</label>
+        <textarea class="form-control" id="interests" name="interests" rows="2"
+          placeholder="e.g., coding, reading, sports"></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Skills</label>
+        <div class="d-flex flex-wrap">
+          <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" id="coding" name="skills[]" value="coding">
+            <label class="form-check-label" for="coding">Coding</label>
+          </div>
+          <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" id="writing" name="skills[]" value="writing">
+            <label class="form-check-label" for="writing">Writing</label>
+          </div>
+          <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" id="design" name="skills[]" value="design">
+            <label class="form-check-label" for="design">Design</label>
+          </div>
+          <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" id="communication" name="skills[]" value="communication">
+            <label class="form-check-label" for="communication">Communication</label>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Personality Type</label>
+        <div class="d-flex flex-wrap">
+          <div class="form-check me-3">
+            <input class="form-check-input" type="radio" id="introvert" name="personality" value="introvert" required>
+            <label class="form-check-label" for="introvert">Introvert</label>
+          </div>
+          <div class="form-check me-3">
+            <input class="form-check-input" type="radio" id="extrovert" name="personality" value="extrovert">
+            <label class="form-check-label" for="extrovert">Extrovert</label>
+          </div>
+          <div class="form-check me-3">
+            <input class="form-check-input" type="radio" id="ambivert" name="personality" value="ambivert">
+            <label class="form-check-label" for="ambivert">Ambivert</label>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="careerGoal" class="form-label">Long-Term Career Goal</label>
+        <input type="text" class="form-control" id="careerGoal" name="careerGoal" placeholder="e.g., Software Engineer">
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Preferred Location to Study</label>
+        <input type="text" class="form-control" id="location" name="location" placeholder="e.g., Malappuram, Kerala">
+      </div>
+      <div class="mb-3">
+        <label for="language" class="form-label">Primary Language</label>
+        <input type="text" class="form-control" id="language" name="language" required placeholder="e.g., English">
+      </div>
+      <div class="d-grid mt-4">
+        <button type="submit" class="btn-submit"><span class="btn-text">Get Personalized Recommendations</span></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  let form = document.getElementById('careerTestForm')
+  let button = document.querySelector('.btn-submit');
+  let btnText = document.querySelector('.btn-text')
+  form.addEventListener('submit', function(e){
+     button.disabled = true;
+    btnText.innerHTML = `<div class="spinner"></div> Processing...`;
+  })
+</script>

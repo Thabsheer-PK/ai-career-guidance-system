@@ -1,0 +1,15 @@
+<div class="containerTest mt-5">
+    <div class="recommendation-card">
+      <h2 class="section-title text-center">Career Recommendations</h2>
+      {{#if careerResult}}
+        <div class="recommendation-content">
+          {{{careerResult}}}
+        </div>
+      {{else}}
+        <p class="text-center">No recommendations available. Please complete the career test.</p>
+      {{/if}}
+      <div class="text-center mt-4">
+        <a href="/career-test" class="back-link">Back to Career Test</a>
+      </div>
+    </div>
+  </div>
