@@ -36,7 +36,7 @@ Student Profile:
 - Weekly Availability: ${userData.availability || 'Not provided'} hours
 - Preferred Learning Style: ${userData.learningStyle || 'Not provided'}
 - Roadmap output must be in bullet short points 
-- when filling college fee amount, it must be a value, any string or blank is not allowed
+- when filling college fee amount, it must be a value, any string or blank is not allowed specify its and show near by amount (per) " /year"
 
 Output format (strict HTML only):
 

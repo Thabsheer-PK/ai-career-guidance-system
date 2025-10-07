@@ -2,7 +2,7 @@
 const { response } = require('express')
 const User = require('../models/user')
 const bcrypt = require('bcrypt')
-import { GoogleGenerativeAI } from "@google/generative-ai";
+const {GoogleGenerativeAI} = require('@google/generative-ai')
 
 module.exports = {
   doSignup: (userData) => {
