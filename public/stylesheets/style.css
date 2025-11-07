@@ -363,7 +363,7 @@
 
  .cta-button {
    font-size: 1.2rem;
-   padding: 1rem 3rem;
+   padding: 1rem 2rem;
    border-radius: 50px;
  }
 
@@ -440,3 +440,8 @@
    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
  }
 
+/* @media (max-width : 576px){
+  .cta-button{
+    font-size:1rem;
+  }
+} */

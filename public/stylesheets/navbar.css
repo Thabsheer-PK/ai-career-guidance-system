@@ -147,4 +147,13 @@
     align-items: center;
     gap: 0.5rem;
   }
+  .navbar-brand {
+    margin-left: -15px;
+    width: 20px;
+  }
+}
+@media (max-width: 320px){
+  .navbar-toggler {
+    display: none;
+  }
 }
