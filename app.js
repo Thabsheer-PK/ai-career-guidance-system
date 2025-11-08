@@ -67,5 +67,12 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-// ✅ Important: export app for Vercel
-module.exports = app;
+// ✅ Allow both local and Vercel usage
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`✅ Server running locally on port ${PORT}`);
+  });
+} else {
+  module.exports = app;
+}
